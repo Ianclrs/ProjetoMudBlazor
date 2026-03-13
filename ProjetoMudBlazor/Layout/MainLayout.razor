@@ -6,20 +6,23 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1">
+    <MudAppBar Elevation="0" Color="Color.Default" Style="height: 47px;" Fixed >
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Style="@($"color:{Colors.Orange.Darken3}")" Edge="Edge.Start" OnClick="@DrawerToggle" />
-        <MudText Typo="Typo.h6" Class="ml-2" Style="@($"color:{Colors.Orange.Darken3}")">HomePg</MudText>
+        <MudText Typo="Typo.h6" Class="ml-2" Style="@($"color:{Colors.Orange.Darken3}")">FitUP</MudText>
         <MudSpacer />
         <MudIconButton Icon="@(DarkLightModeButtonIcon)" Style="@($"color:{Colors.Orange.Darken3}")" OnClick="@DarkModeToggle" />
-        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Style="@($"color:{Colors.Orange.Darken3}")" Href="https://github.com/Ianclrs" Target="_blank" />
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Style="@($"color:{Colors.Orange.Darken3}")" Href="https://github.com/Ianclrs" Target="_blank"
+        />
     </MudAppBar>
 
-    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Docked" Elevation="0">
         <NavMenu />
     </MudDrawer>
 
-    <MudMainContent Class="pt-16 pa-4">
+    <MudMainContent  Style="@($"background-image: url('WallPaper-Pucci.png'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh;")">
+        <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
         @Body
+        </MudContainer>
     </MudMainContent>
 </MudLayout>
 
